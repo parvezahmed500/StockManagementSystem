@@ -26,5 +26,18 @@ namespace StockManagement.Controllers
 
             return View();
         }
+
+        public ActionResult Advantages()
+        {
+            return View();
+        }
+        public ActionResult Project()
+        {
+            return View();
+        }
+        public ActionResult Client()
+        {
+            return View();
+        }
     }
 }
