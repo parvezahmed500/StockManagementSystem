@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManagement.Models.EntityModels
 {
-    class StockOut
+    public class StockOut
     {
         public int Id { get; set; }
         public DateTime StockOutDate { get; set; }

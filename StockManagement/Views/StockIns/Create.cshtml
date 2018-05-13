@@ -1,0 +1,123 @@
+﻿@model StockManagement.Models.EntityModels.StockIn
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="container">
+    <div class="row">
+
+        <h2>Create</h2>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>StockIn</h4>
+                <hr/>
+                @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StockDate, htmlAttributes: new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StockDate, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.StockDate, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.Description, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+
+
+                @*@Html.Partial("_StockDetails")*@
+                <div class="row">
+                    <h2>Stock In Details</h2>
+                </div>
+                <div class="form-group">
+                    <div class="control-label col-md-2">
+                        <label>Product Name</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" name="ProductName" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="control-label col-md-2">
+                        <label>Product Quantity</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" name="ProductQty" class="form-control"/>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" value="Add" class="btn btn-default" id="btn_add" />
+                    </div>
+                </div>
+
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>Product Name</td>
+                        <td>Product Quantity</td>
+                        <td>Select</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+                <button type="button" class="delete-row">Delete Row</button>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+
+            </div>  
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+        $(function() {
+            $('#btn_add').click(function() {
+                var product = $('input[name="ProductName"]').val();
+                var qty = $('input[name="ProductQty"]').val();
+                var tr = '<tr><td>'+product+'</td><td>'+qty+'</td><td><input type="checkbox" name="record"></td></tr>';
+                $('tbody').append(tr);
+            });
+            //$(document).click('btn-edit', function() {
+            //    var tr = $(this).closest('tr');
+            //    var product = $(tr).find('td:eq(0)').text();
+            //    var qty = $(tr).find('td:eq(1)').text();
+
+
+            //    $('input[name="ProductName"]').val(product);
+            //    $('input[name="ProductQty"]').val(qty);
+            //});
+            $(".delete-row").click(function () {
+                $("table tbody").find('input[name="record"]').each(function () {
+                    if ($(this).is(":checked")) {
+                        $(this).parents("tr").remove();
+                    }
+                });
+            });
+        });
+</script>

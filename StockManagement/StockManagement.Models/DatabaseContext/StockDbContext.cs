@@ -8,7 +8,7 @@ using StockManagement.Models.EntityModels;
 
 namespace StockManagement.Models.DatabaseContext
 {
-    class StockDbContext:DbContext
+    public class StockDbContext:DbContext
     {
 
         public DbSet<Category> Categories { get; set; }
