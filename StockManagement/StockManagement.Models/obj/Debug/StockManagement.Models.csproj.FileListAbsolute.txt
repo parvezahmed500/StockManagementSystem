@@ -22,3 +22,15 @@ D:\VisualStudio\WebApplication\Inventory\StockManagementSystem\StockManagement\S
 D:\VisualStudio\WebApplication\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\obj\Debug\StockManagement.Models.pdb
 D:\VisualStudio\WebApplication\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\obj\Debug\StockManagement.Models.Migrations.initial.resources
 D:\VisualStudio\WebApplication\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\obj\Debug\StockManagement.Models.csproj.GenerateResource.Cache
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\bin\Debug\StockManagement.Models.dll.config
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\bin\Debug\StockManagement.Models.dll
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\bin\Debug\StockManagement.Models.pdb
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\bin\Debug\EntityFramework.dll
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\bin\Debug\EntityFramework.SqlServer.dll
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\bin\Debug\EntityFramework.xml
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\bin\Debug\EntityFramework.SqlServer.xml
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\obj\Debug\StockManagement.Models.csprojResolveAssemblyReference.cache
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\obj\Debug\StockManagement.Models.Migrations.initial.resources
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\obj\Debug\StockManagement.Models.csproj.GenerateResource.Cache
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\obj\Debug\StockManagement.Models.dll
+E:\Parvez\WebDevelopment\Day-73\Inventory\StockManagementSystem\StockManagement\StockManagement.Models\obj\Debug\StockManagement.Models.pdb

@@ -1,0 +1,128 @@
+﻿@model StockManagement.Models.ViewModels.StockInCreateVM
+
+@{
+    ViewBag.Title = "StockIn";
+}
+
+
+<div class="container">
+    <div class="row">
+        <h2>StockIn</h2>
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>StockInCreateVM</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-success">
+                        @ViewBag.Message
+                    </div>
+                }
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StockDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StockDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StockDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group">
+                                        @Html.Label("Category", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("CategoryDropDown", new SelectList(Model.Categories, "Id", "Name"), htmlAttributes: new { @class = "dropdown form-control" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        @Html.Label("Product", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("ProductDropDown", null, htmlAttributes: new { @class = "dropdown form-control" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        @Html.Label("Quantity", htmlAttributes: new {@class = "control-label col-md-2"})
+                                        <div class="col-md-10">
+                                            @Html.TextBox("Quantity", "", htmlAttributes: new {@class = "form-control col-md-10", placeHolder = "Provide Quantity"})
+                                        </div>
+                                    </div>
+                                    <div class="container">
+
+                                        <div class="row">
+                                            <div class="col-md-1">
+
+                                            </div>
+                                            <div class="col-md-2">
+
+                                                <input type="button" value="Add" class="btn btn-success" id="btn_add"/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <table class="table table-bordered" id="tableProducts">
+                                                <thead>
+                                                <tr>
+
+                                                    <td>Product</td>
+                                                    <td>Quantity</td>
+                                                    <td>Action</td>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                            <button type="button" id='btn_delete' class="btn btn-primary">Delete</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+    @section scripts{
+
+        <script src="~/Scripts/Stock/stockin_create.js"></script>
+    }
+</div>
+</div>

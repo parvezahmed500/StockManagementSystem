@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AutoMapper;
+using StockManagement.Models.EntityModels;
+using StockManagement.Models.ViewModels;
 
 namespace StockManagement
 {
@@ -16,6 +19,12 @@ namespace StockManagement
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<StockInCreateVM, StockIn>();
+                cfg.CreateMap<StockIn, StockInCreateVM>();
+            });
         }
     }
 }
